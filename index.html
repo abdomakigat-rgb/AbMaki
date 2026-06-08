@@ -120,7 +120,7 @@
             gap: 35px;
         }
 
-        /* كارت الصورة الخرافي */
+        /* كارت الصورة الخرافي بدون إطار */
         .photo-card {
             background: var(--card-bg);
             border-radius: 24px;
@@ -129,14 +129,13 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: none; /* إزالة الإطار تماماً */
             position: relative;
         }
 
         .photo-card:hover {
             transform: translateY(-12px);
             box-shadow: var(--card-shadow-hover);
-            border-color: rgba(234, 179, 8, 0.3);
         }
 
         /* إطار الصور الاحترافي */
@@ -229,7 +228,7 @@
             transform: translateY(2px);
         }
 
-        /* نافذة الـ Lightbox المكبرة للصور (تأثير جبار سينمائي) */
+        /* نافذة الـ Lightbox المكبرة للصور بدون إطار */
         .lightbox {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -260,7 +259,7 @@
             transform: scale(0.9);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             object-fit: contain;
-            border: 1px solid rgba(234, 179, 8, 0.2);
+            border: none; /* إزالة الإطار من النافذة المكبرة أيضاً */
         }
 
         .lightbox.active .lightbox-content {
@@ -377,7 +376,7 @@
     </footer>
 
     <script>
-        // المصفوفة الكاملة لـ 73 صورة فريدة مرتبة ومحدثة بالكامل
+        // المصفوفة الكاملة الدقيقة والمطابقة تماماً لملفاتك المرفوعة
         const images = [
             "IMG_20260527_012347_695.jpg",
             "IMG_20260527_012347_708.jpg",
@@ -452,9 +451,6 @@
             "IMG_20260527_012611_067.jpg"
         ];
 
-        /* تعديل مسار المجلد: إذا كانت الصور واللوجو مرفوعة في نفس المجلد الفعلي مع ملف الـ HTML، 
-           اترك القيمة فارغة ""، وإذا كانت داخل مجلد اسمه images اتركها كما هي "images/".
-        */
         const folderPath = ""; 
         const gallery = document.getElementById('gallery');
         const searchInput = document.getElementById('searchInput');
