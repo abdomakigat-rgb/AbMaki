@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض صور دفعة تانية ثانوي 2026 - Ab Maki Group</title>
+    <title>معرض صور Ab Maki</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 
         :root {
             /* تعديل الألوان لتناسب عمق الفخامة واللوجو الذهبي والأسود */
-            --primary: linear-gradient(135deg, #090d16, #111827, #1e293b);
+            --primary: #ffffff; /* تم تعديل الهيدر للون الأبيض */
             --accent: #eab308; /* لمسة ذهبية تليق بـ Ab Maki */
             --accent-hover: #ca8a04;
             --bg-main: #0b0f19; /* خلفية داكنة مريحة للعين وتبرز الصور */
@@ -36,37 +36,36 @@
             overflow-x: hidden;
         }
 
-        /* هيدر سينمائي فخم وجبار - تم تعديل الخلفية لتبرز اللوجو الأبيض */
+        /* هيدر سينمائي فخم وجبار باللون الأبيض */
         header {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            color: white;
+            background: var(--primary);
+            color: #0b0f19; /* تغيير لون النص الأساسي ليتناسب مع الخلفية البيضاء */
             text-align: center;
             padding: 60px 20px 40px 20px;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             overflow: hidden;
-            border-bottom: 1px solid rgba(234, 179, 8, 0.15);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         header::before {
             content: '';
             position: absolute;
             top: 0; right: 0; bottom: 0; left: 0;
-            background: radial-gradient(circle at 50% 30%, rgba(234, 179, 8, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 30%, rgba(234, 179, 8, 0.05) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        /* تنسيق اللوجو الجبار - تم تعديله ليكون أبيض تماماً وبدون إطار */
+        /* تنسيق اللوجو الجبار من أعلى */
         .logo-container {
             width: 140px;
             height: 140px;
             margin: 0 auto 20px auto;
             border-radius: 50%;
-            background: transparent;
-            padding: 0;
-            box-shadow: none;
-            border: none;
+            background: #000;
+            padding: 5px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 0 15px rgba(234, 179, 8, 0.2);
+            border: 2px solid var(--accent);
             animation: fadeInDown 0.8s ease-out;
             display: flex;
             align-items: center;
@@ -79,443 +78,6 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            filter: brightness(0) invert(1); /* تحويل اللوجو للأبيض تماماً */
-            transition: transform 0.5s ease, filter 0.5s ease;
-        }
-
-        .logo-container:hover img {
-            transform: scale(1.08) rotate(5deg);
-            filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(234, 179, 8, 0.6));
-        }
-
-        /* العنوان السينمائي الجبار */
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            font-weight: 800;
-            background: linear-gradient(to left, #ffffff, #fef08a, #eab308);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(234, 179, 8, 0.4);
-            animation: fadeInDown 1s ease-out 0.2s both;
-        }
-
-        header h1 span {
-            display: block;
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #ffffff;
-            opacity: 0.8;
-            margin-top: 5px;
-            -webkit-text-fill-color: initial;
-            background: initial;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.85;
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto;
-            color: #94a3b8;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-
-        /* إخفاء شريط الأدوات (البحث والإحصائيات) بناءً على طلبك */
-        .toolbar {
-            display: none !important;
-        }
-
-        /* شبكة عرض الصور المستجيبة (Grid) محاذية من الأعلى */
-        .gallery-container {
-            max-width: 1440px;
-            margin: 50px auto 0 auto;
-            padding: 0 25px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-            gap: 35px;
-        }
-
-        /* كارت الصورة الخرافي */
-        .photo-card {
-            background: var(--card-bg);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
-            cursor: pointer;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--card-shadow-hover);
-            border-color: rgba(234, 179, 8, 0.3);
-        }
-
-        /* إطار الصور الاحترافي */
-        .image-wrapper {
-            width: 100%;
-            height: 440px;
-            overflow: hidden;
-            background-color: #1e293b;
-            position: relative;
-        }
-
-        .image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* تأثير الطبقة الشفافة عند التمرير بالماوس باستخدام الأيقونات */
-        .image-wrapper::after {
-            content: '\f065  عرض مكبر';
-            font-family: 'Font Awesome 6 Free', 'Cairo';
-            font-weight: 900;
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 15, 25, 0.65);
-            backdrop-filter: blur(4px);
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.15rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .photo-card:hover .image-wrapper::after {
-            opacity: 1;
-        }
-
-        .photo-card:hover .image-wrapper img {
-            transform: scale(1.06);
-        }
-
-        /* منطقة زر التحميل المتطورة */
-        .card-body {
-            padding: 20px;
-            text-align: center;
-            background: var(--card-bg);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            z-index: 2;
-        }
-
-        .download-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            color: white;
-            text-decoration: none;
-            padding: 14px 0;
-            border-radius: 14px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid rgba(234, 179, 8, 0.4);
-        }
-
-        .download-btn:hover {
-            background: linear-gradient(135deg, var(--accent), #ca8a04);
-            color: #000;
-            box-shadow: 0 6px 20px rgba(234, 179, 8, 0.3);
-            border-color: transparent;
-        }
-
-        .download-btn:active {
-            transform: scale(0.97);
-        }
-
-        .download-btn i {
-            font-size: 1.1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .download-btn:hover i {
-            transform: translateY(2px);
-        }
-
-        /* نافذة الـ Lightbox المكبرة للصور (تأثير جبار سينمائي) */
-        .lightbox {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(5, 7, 12, 0.98);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-            padding: 20px;
-        }
-
-        .lightbox.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 75vh;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.7);
-            transform: scale(0.9);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            object-fit: contain;
-            border: 1px solid rgba(234, 179, 8, 0.2);
-        }
-
-        .lightbox.active .lightbox-content {
-            transform: scale(1);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 25px; right: 25px;
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.3rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .lightbox-close:hover {
-            background: var(--accent);
-            color: #000;
-            transform: rotate(90deg);
-        }
-
-        .lightbox-download {
-            margin-top: 25px;
-            min-width: 280px;
-        }
-
-        /* رسالة البحث الفارغ */
-        .no-results {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 60px 20px;
-            color: #64748b;
-            font-size: 1.2rem;
-            display: none;
-        }
-
-        /* الفوتر الاحترافي */
-        footer {
-            text-align: center;
-            margin-top: 80px;
-            padding: 30px 20px;
-            color: #64748b;
-            font-size: 1.05rem;
-            font-weight: 500;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: #090d16;
-        }
-        
-        footer p span {
-            color: var(--accent);
-        }
-
-        /* حركات الأنيميشن الأساسية */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* استعلامات الشاشات الصغيرة (Responsive) */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
-            header h1 span { font-size: 1rem; }
-            header p { font-size: 1.05rem; }
-            .gallery-container { gap: 25px; padding: 0 15px; }
-            .image-wrapper { height: 380px; }
-            .logo-container { width: 110px; height: 110px; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo-container">
-            <img src="Picsart_26-06-06_15-33-16-196[1].png" alt="Logo Ab Maki Group">
-        </div>
-        <h1>صور آخر يوم امتحانات<span>دفعة تانية ثانوي 2026</span></h1>
-        <p>استعرض وحمّل صور الدفعة بجودتها الكاملة — عدسة Ab Maki Group</p>
-    </header>
-
-    <div class="toolbar">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="ابحث عن صورة محددة...">
-        </div>
-        <div class="counter-badge" id="imageCounter">إجمالي الصور: 73 صورة</div>
-    </div>
-
-    <main class="gallery-container" id="gallery">
-        <div class="no-results" id="noResults">عذراً، لم نجد أي صورة تطابق بحثك! 🔍</div>
-    </main>
-
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
-        <img src="" alt="صورة مكبرة" class="lightbox-content" id="lightboxImg">
-        <a href="" download="" class="download-btn lightbox-download" id="lightboxDownloadBtn">
-            <i class="fa-solid fa-cloud-arrow-down"></i>
-            <span>تحميل بجودتها الأصلية</span>
-        </a>
-    </div>
-
-    <footer>
-        <p>جميع الحقوق محفوظة © <span>Ab Maki Group</span> 2026</p>
-    </footer>
-
-    <script>
-        // المصفوفة الكاملة لـ 73 صورة فريدة مرتبة ومحدثة بالكامل وبدون نقص حرف واحد كما هي
-        const images = [
-            "IMG_20260527_012347_695.jpg",
-            "IMG_20260527_012347_708.jpg",
-            "IMG_20260527_012347_950.jpg",
-            "IMG_20260527_012348_088.jpg",
-            "IMG_20260527_012348_134.jpg",
-            "IMG_20260527_012348_156.jpg",
-            "IMG_20260527_012348_305.jpg",
-            "IMG_20260527_012348_574.jpg",
-            "IMG_20260527_012355_928.jpg",
-            "IMG_20260527_012355_996.jpg",
-            "IMG_20260527_012356_000.jpg",
-            "IMG_20260527_012356_224.jpg",
-            "IMG_20260527_012356_274.jpg",
-            "IMG_20260527_012356_629.jpg",
-            "IMG_20260527_012356_708.jpg",
-            "IMG_20260527_012356_862.jpg",
-            "IMG_20260527_012402_677.jpg",
-            "IMG_20260527_012402_706.jpg",
-            "IMG_20260527_012402_858.jpg",
-            "IMG_20260527_012402_884.jpg",
-            "IMG_20260527_012403_462.jpg",
-            "IMG_20260527_012410_177.jpg",
-            "IMG_20260527_012429_977.jpg",
-            "IMG_20260527_012430_494.jpg",
-            "IMG_20260527_012430_511.jpg",
-            "IMG_20260527_012438_355 (1).jpg",
-            "IMG_20260527_012438_355.jpg",أبشر يا غالي، التعديلات تمت بالملي! الكود المطور بقا "جبار" بزيادة وواجهة المستخدم بقت قوية جداً وفخمة تناسب حدث زي ده.
-
-### 🔥 أهم التعديلات التي جعلت التصميم "جبار" بزيادة:
-1. **هيدر "قوي" باللون الأبيض:** تم تغيير لون خلفية الهيدر للأبيض الناصع مع إضافة توهج ذهبي خفيف للعنوان واللوجو، مما يبرزهما بشكل احترافي.
-2. **تحديث النصوص:** العنوان السينمائي الآن هو **"صور آخر يوم امتحانات | دفعة تانية ثانوي 2026"**.
-3. **التصميم الجبار:** * تم تحسين البطاقات لتكون بتأثير توهج أبيض ثلاثي الأبعاد مع كل حركة للماوس.
-   * الـ Lightbox Modal أصبح يحمل الصور فوراً بكامل الشاشة لتعزيز تجربة العرض "القوية".
-   * تحسين تأثير الـ Lazy Loading لتجنب أي بطء وسط الكم الكبير من الصور.
-
-إليك كود الـ `index.html` الجبار بالكامل وبدون نقصان أي صورة من الـ 73 صورة:
-
-```html
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دفعة تانية ثانوي 2026 - صور آخر يوم امتحانات | Ab Maki Group</title>
-    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-    <link href="[https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap](https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap)" rel="stylesheet">
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
-    <style>
-        /* الأساسيات وإعادة التعيين لـ تصميم عصري سينمائي جبار */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            /* تعديل الألوان لتناسب عمق الفخامة واللوجو الذهبي والأسود */
-            --primary: linear-gradient(135deg, #090d16, #111827, #1e293b);
-            --accent: #eab308; /* لمسة ذهبية تليق بـ Ab Maki */
-            --accent-hover: #ca8a04;
-            --bg-main: #0b0f19; /* خلفية داكنة مريحة للعين وتبرز الصور */
-            --card-bg: #151f32;
-            --text-color: #f1f5f9;
-            --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            --card-shadow-hover: 0 25px 50px rgba(234, 179, 8, 0.15);
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-color);
-            padding-bottom: 40px;
-            overflow-x: hidden;
-        }
-
-        /* هيدر أبيض فخم وجبار */
-        header {
-            background: #ffffff;
-            color: #1e293b;
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            border-bottom: 1px solid rgba(234, 179, 8, 0.2);
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            background: radial-gradient(circle at 50% 30%, rgba(234, 179, 8, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        /* تنسيق اللوجو الجبار - تم تعديله ليكون أبيض تماماً وبدون إطار */
-        .logo-container {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 20px auto;
-            border-radius: 50%;
-            background: transparent;
-            padding: 0;
-            box-shadow: none;
-            border: none;
-            animation: fadeInDown 0.8s ease-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            filter: brightness(0) invert(1); /* تحويل اللوجو للأبيض تماماً ليتناسب مع الهيدر */
             transition: transform 0.5s ease;
         }
 
@@ -523,35 +85,23 @@
             transform: scale(1.08) rotate(5deg);
         }
 
-        /* العنوان السينمائي الجبار */
         header h1 {
             font-size: 3rem;
             margin-bottom: 15px;
             font-weight: 800;
-            background: linear-gradient(to left, #1e293b, #0f172a);
+            background: linear-gradient(to left, #0b0f19, #475569, #ca8a04);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: fadeInDown 1s ease-out 0.2s both;
         }
 
-        header h1 span {
-            display: block;
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #1e293b;
-            opacity: 0.8;
-            margin-top: 5px;
-            -webkit-text-fill-color: initial;
-            background: initial;
-        }
-
         header p {
             font-size: 1.2rem;
-            opacity: 0.85;
-            font-weight: 300;
+            opacity: 0.9;
+            font-weight: 600;
             max-width: 600px;
             margin: 0 auto;
-            color: #1e293b;
+            color: #475569; /* لون داكن واضح ومريح على الخلفية البيضاء */
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
@@ -581,7 +131,6 @@
             flex-direction: column;
             border: 1px solid rgba(255, 255, 255, 0.05);
             position: relative;
-            cursor: pointer;
         }
 
         .photo-card:hover {
@@ -597,6 +146,7 @@
             overflow: hidden;
             background-color: #1e293b;
             position: relative;
+            cursor: zoom-in;
         }
 
         .image-wrapper img {
@@ -785,7 +335,6 @@
         /* استعلامات الشاشات الصغيرة (Responsive) */
         @media (max-width: 768px) {
             header h1 { font-size: 2.2rem; }
-            header h1 span { font-size: 1rem; }
             header p { font-size: 1.05rem; }
             .gallery-container { gap: 25px; padding: 0 15px; }
             .image-wrapper { height: 380px; }
@@ -799,7 +348,7 @@
         <div class="logo-container">
             <img src="Picsart_26-06-06_15-33-16-196[1].png" alt="Logo Ab Maki Group">
         </div>
-        <h1>صور آخر يوم امتحانات<span>دفعة تانية ثانوي 2026</span></h1>
+        <h1>معرض الصور الرقمي</h1>
         <p>استعرض وحمّل صور الدفعة بجودتها الكاملة — عدسة Ab Maki Group</p>
     </header>
 
@@ -828,7 +377,7 @@
     </footer>
 
     <script>
-        // المصفوفة الكاملة لـ 73 صورة فريدة مرتبة ومحدثة بالكامل وبدون نقص حرف واحد كما هي
+        // المصفوفة الكاملة لـ 73 صورة فريدة مرتبة ومحدثة بالكامل
         const images = [
             "IMG_20260527_012347_695.jpg",
             "IMG_20260527_012347_708.jpg",
@@ -903,7 +452,10 @@
             "IMG_20260527_012611_067.jpg"
         ];
 
-        const folderPath = "images/"; 
+        /* تعديل مسار المجلد: إذا كانت الصور واللوجو مرفوعة في نفس المجلد الفعلي مع ملف الـ HTML، 
+           اترك القيمة فارغة ""، وإذا كانت داخل مجلد اسمه images اتركها كما هي "images/".
+        */
+        const folderPath = ""; 
         const gallery = document.getElementById('gallery');
         const searchInput = document.getElementById('searchInput');
         const imageCounter = document.getElementById('imageCounter');
@@ -943,7 +495,7 @@
         // تشغيل بناء المعرض فوراً
         buildGallery();
 
-        // نظام الفلترة والبحث الفوري الفعّال (Real-time Filter) - محتفظ به تماماً لمنع الأخطاء البرمجية
+        // نظام الفلترة والبحث الفوري الفعّال
         searchInput.addEventListener('input', function(e) {
             const term = e.target.value.toLowerCase().trim();
             const cards = gallery.querySelectorAll('.photo-card');
