@@ -3,497 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صور اخر يوم امتحانات دفعه تانيه ثانوي 2026</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <meta property="og:title" content="معرض صور اخر يوم امتحانات دفعه 2026">
+    <meta property="og:description" content="استمتع بتصفح اللحظات الجميلة — بعدسة Ab Maki Group">
+    <meta property="og:image" content="https://i.ibb.co/jk7DHL2j/Picsart-26-06-06-15-33-16-196.png">
+    <meta property="og:type" content="website">
+
+    <title>معرض صور دفعة 2026 - Ab Maki Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* إعادة تعيين الأساسيات لتصميم غامر */
-        * {
+        body {
+            background-color: #0b0f19;
+            color: #f1f5f9;
+            font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
+            text-align: center;
         }
 
-        :root {
-            --bg-main: #0b0f19;      /* خلفية داكنة فخمة وسينمائية */
-            --card-bg: #151f32;      /* خلفية الكروت */
-            --accent: #eab308;       /* اللمسة الذهبية الخاصة بـ Ab Maki */
-            --text-light: #f1f5f9;   /* لون النصوص الفاتحة */
-            --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            --card-shadow-hover: 0 25px 50px rgba(234, 179, 8, 0.15);
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-light);
-            padding-bottom: 40px;
-            overflow-x: hidden;
-        }
-
-        /* هيدر احترافي باللون الأبيض ليعطي تباين قوي */
         header {
             background: #ffffff;
             color: #0b0f19;
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 50px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* تنسيق اللوجو الدائري الاحترافي */
-        .logo-container {
-            width: 130px;
-            height: 130px;
-            margin: 0 auto 20px auto;
+        /* تنسيق اللوجو بدون إطار */
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
             border-radius: 50%;
-            background: #000;
-            padding: 5px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 0 15px rgba(234, 179, 8, 0.2);
-            border: 2px solid var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
-            border-radius: 50%;
-            transition: transform 0.5s ease;
         }
 
-        .logo-container:hover img {
-            transform: scale(1.08) rotate(5deg);
-        }
+        h1 { font-size: 2rem; margin-bottom: 10px; }
+        p { color: #475569; font-weight: 600; }
 
-        header h1 {
-            font-size: 2.6rem;
-            margin-bottom: 12px;
-            font-weight: 800;
-            background: linear-gradient(to left, #0b0f19, #475569, #ca8a04);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        header p {
-            font-size: 1.15rem;
-            font-weight: 600;
-            max-width: 600px;
-            margin: 0 auto;
-            color: #475569;
-        }
-
-        /* شبكة عرض الصور (Grid) الاحترافية */
-        .gallery-container {
-            max-width: 1440px;
-            margin: 50px auto 0 auto;
-            padding: 0 25px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        /* كارت الصورة - بدون إطارات تماماً */
-        .photo-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            flex-direction: column;
-            border: none;
-            position: relative;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--card-shadow-hover);
-        }
-
-        /* حاوية الصورة داخل الكارت */
-        .image-wrapper {
-            width: 100%;
-            height: 320px;
-            overflow: hidden;
-            background-color: #121926;
-            position: relative;
-            cursor: zoom-in;
-        }
-
-        .image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* تأثير الطبقة الشفافة عند التمرير */
-        .image-wrapper::after {
-            content: '\f065  عرض مكبر';
-            font-family: 'Font Awesome 6 Free', 'Cairo';
-            font-weight: 900;
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 15, 25, 0.7);
-            backdrop-filter: blur(4px);
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .photo-card:hover .image-wrapper::after {
-            opacity: 1;
-        }
-
-        .photo-card:hover .image-wrapper img {
-            transform: scale(1.06);
-        }
-
-        /* منطقة التحكم وزر التحميل */
-        .card-body {
-            padding: 18px;
-            text-align: center;
-            background: var(--card-bg);
-            z-index: 2;
-        }
-
-        .card-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #94a3b8;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        /* تصميم زرار التحميل التلقائي السريع */
-        .download-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            color: white;
-            cursor: pointer;
-            padding: 12px 0;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid rgba(234, 179, 8, 0.2);
-            user-select: none;
-        }
-
-        .download-btn:hover {
-            background: linear-gradient(135deg, var(--accent), #ca8a04);
-            color: #000;
-            box-shadow: 0 6px 20px rgba(234, 179, 8, 0.3);
-            border-color: transparent;
-        }
-
-        .download-btn:active {
-            transform: scale(0.97);
-        }
-
-        .download-btn.loading {
-            background: #334155 !important;
-            color: #94a3b8 !important;
-            cursor: wait;
-            border-color: transparent;
-        }
-
-        /* نافذة الـ Lightbox المكبرة للصور */
-        .lightbox {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(5, 7, 12, 0.98);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
+        .gallery-section {
+            max-width: 1200px;
+            margin: 50px auto;
             padding: 20px;
+            background: #151f32;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .lightbox.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 75vh;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.7);
-            transform: scale(0.9);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            object-fit: contain;
+        /* تنسيق إطار عرض صور درايف */
+        iframe {
+            width: 100%;
+            height: 700px;
+            border-radius: 15px;
             border: none;
         }
 
-        .lightbox.active .lightbox-content {
-            transform: scale(1);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 25px; right: 25px;
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.3rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .lightbox-close:hover {
-            background: var(--accent);
-            color: #000;
-            transform: rotate(90deg);
-        }
-
-        .lightbox-download {
-            margin-top: 25px;
-            min-width: 280px;
-        }
-
-        /* الفوتر السفلي */
         footer {
-            text-align: center;
-            margin-top: 80px;
-            padding: 30px 20px;
+            margin-top: 50px;
+            padding: 20px;
             color: #64748b;
-            font-size: 1.05rem;
-            font-weight: 500;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: #090d16;
-        }
-
-        footer p span {
-            color: var(--accent);
-        }
-
-        /* التجاوب مع الشاشات الصغيرة */
-        @media (max-width: 768px) {
-            header h1 { font-size: 1.8rem; }
-            header p { font-size: 1rem; }
-            .gallery-container { gap: 20px; padding: 0 15px; }
-            .image-wrapper { height: 280px; }
-            .logo-container { width: 110px; height: 110px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="Picsart_26-06-06_15-33-16-196[1].png" alt="Logo Ab Maki Group">
-        </div>
-        <h1>صور اخر يوم امتحانات دفعه تانيه ثانوي 2026</h1>
-        <p>المعرض الرسمي لتوثيق اللحظات الأخيرة للدفعة — بعدسة Ab Maki Group</p>
+        <img src="https://i.ibb.co/jk7DHL2j/Picsart-26-06-06-15-33-16-196.png" alt="Logo" class="logo">
+        <h1>معرض صور اخر يوم امتحانات دفعه 2026</h1>
+        <p>استمتع بتصفح اللحظات الجميلة — بعدسة Ab Maki Group</p>
     </header>
 
-    <main class="gallery-container" id="galleryGrid">
-        </main>
-
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
-        <img src="" alt="صورة مكبرة" class="lightbox-content" id="lightboxImg">
-        <div class="download-btn lightbox-download" id="lightboxDownloadBtn">
-            <i class="fa-solid fa-cloud-arrow-down"></i>
-            <span>تحميل بالجودة الأصلية</span>
-        </div>
+    <div class="gallery-section">
+        <iframe src="https://drive.google.com/embeddedfolderview?id=1lWCUw9BC4quyrFB6UuDJmPBjathKjsQK#grid" 
+                allowfullscreen>
+        </iframe>
     </div>
 
     <footer>
-        <p>جميع الحقوق محفوظة © <span>Ab Maki Group</span> 2026</p>
+        <p>جميع الحقوق محفوظة © Ab Maki Group 2026</p>
     </footer>
 
-    <script>
-        // مصفوفة الروابط المباشرة الصحيحة من ملفات الـ HTML المرفقة
-        const imagesList = [
-            "https://i.postimg.cc/PCbY2QSK/IMG-20260527-012347-695.jpg",
-            "https://i.postimg.cc/rRttW1dV/IMG-20260527-012347-708.jpg",
-            "https://i.postimg.cc/gL66RVwG/IMG-20260527-012347-950.jpg",
-            "https://i.postimg.cc/Pp7wP3qN/IMG-20260527-012348-088.jpg",
-            "https://i.postimg.cc/QKWW5QBh/IMG-20260527-012348-134.jpg",
-            "https://i.postimg.cc/CdZ8Wgvx/IMG-20260527-012348-156.jpg",
-            "https://i.postimg.cc/PNBDHRcv/IMG-20260527-012348-305.jpg",
-            "https://i.postimg.cc/YjJF7sVd/IMG-20260527-012348-574.jpg",
-            "https://i.postimg.cc/bdKnPBM6/IMG-20260527-012355-928.jpg",
-            "https://i.postimg.cc/Czkqx4Tv/IMG-20260527-012355-996.jpg",
-            "https://i.postimg.cc/mtCHgSWL/IMG-20260527-012356-000.jpg",
-            "https://i.postimg.cc/0zvJMJ9P/IMG-20260527-012356-224.jpg",
-            "https://i.postimg.cc/bGJrkxWn/IMG-20260527-012356-274.jpg",
-            "https://i.postimg.cc/67m307xn/IMG-20260527-012356-629.jpg",
-            "https://i.postimg.cc/8F05HFg0/IMG-20260527-012356-708.jpg",
-            "https://i.postimg.cc/mz1r6bTS/IMG-20260527-012356-862.jpg",
-            "https://i.postimg.cc/2bL5XzCJ/IMG-20260527-012402-677.jpg",
-            "https://i.postimg.cc/vgxmSQQd/IMG-20260527-012402-706.jpg",
-            "https://i.postimg.cc/bDSvFzzq/IMG-20260527-012402-858.jpg",
-            "https://i.postimg.cc/5Qc2hZ0V/IMG-20260527-012402-884.jpg",
-            "https://i.postimg.cc/9w3Q6vMQ/IMG-20260527-012403-462.jpg",
-            "https://i.postimg.cc/jnVSpG5J/IMG-20260527-012410-177.jpg",
-            "https://i.postimg.cc/q68v4jhh/IMG-20260527-012429-977.jpg",
-            "https://i.postimg.cc/YL1CMbGf/IMG-20260527-012430-494.jpg",
-            "https://i.postimg.cc/0KpyPcMt/IMG-20260527-012430-511.jpg",
-            "https://i.postimg.cc/XXFJf7HJ/IMG-20260527-012438-355.jpg",
-            "https://i.postimg.cc/qgnRsMbM/IMG-20260527-012438-355-(1).jpg",
-            "https://i.postimg.cc/qgnRsMbX/IMG-20260527-012438-363.jpg",
-            "https://i.postimg.cc/fJNbBnp7/IMG-20260527-012438-375.jpg",
-            "https://i.postimg.cc/qzT7jVS5/IMG-20260527-012438-523.jpg",
-            "https://i.postimg.cc/GHCpqwVN/IMG-20260527-012438-897.jpg",
-            "https://i.postimg.cc/yky8GpCw/IMG-20260527-012507-600.jpg",
-            "https://i.postimg.cc/7fnZRtyx/IMG-20260527-012508-180.jpg",
-            "https://i.postimg.cc/7fnZRtyL/IMG-20260527-012516-023.jpg",
-            "https://i.postimg.cc/hf1tYZqV/IMG-20260527-012516-121.jpg",
-            "https://i.postimg.cc/VJskP9Yv/IMG-20260527-012516-491.jpg",
-            "https://i.postimg.cc/XrNY6KVf/IMG-20260527-012516-501.jpg",
-            "https://i.postimg.cc/VJskP9Y2/IMG-20260527-012516-591.jpg",
-            "https://i.postimg.cc/HrSsYJxf/IMG-20260527-012516-638.jpg",
-            "https://i.postimg.cc/pm0XW9rx/IMG-20260527-012516-872.jpg",
-            "https://i.postimg.cc/qNmMJtqq/IMG-20260527-012522-393.jpg",
-            "https://i.postimg.cc/gwncnYLw/IMG-20260527-012522-396.jpg",
-            "https://i.postimg.cc/XZmj5T9C/IMG-20260527-012522-595.jpg",
-            "https://i.postimg.cc/Lqw9PrjC/IMG-20260527-012522-616.jpg",
-            "https://i.postimg.cc/Y4ZrFJ1K/IMG-20260527-012522-706.jpg",
-            "https://i.postimg.cc/cg3sBXm6/IMG-20260527-012522-724.jpg",
-            "https://i.postimg.cc/G8DcxqQ3/IMG-20260527-012522-724-(1).jpg",
-            "https://i.postimg.cc/hQqKyTyG/IMG-20260527-012529-252.jpg",
-            "https://i.postimg.cc/K3ymqBqt/IMG-20260527-012529-483.jpg",
-            "https://i.postimg.cc/jnrRgPgc/IMG-20260527-012529-608.jpg",
-            "https://i.postimg.cc/dZKJHrHn/IMG-20260527-012529-854.jpg",
-            "https://i.postimg.cc/QKkhRCwQ/IMG-20260527-012529-864.jpg",
-            "https://i.postimg.cc/hQbcHv66/IMG-20260527-012529-866.jpg",
-            "https://i.postimg.cc/BPc4dbRG/IMG-20260527-012529-947.jpg",
-            "https://i.postimg.cc/K3rxdjCX/IMG-20260527-012529-947-(1).jpg",
-            "https://i.postimg.cc/G9kLBgt4/IMG-20260527-012529-988.jpg",
-            "https://i.postimg.cc/ThrdyN1n/IMG-20260527-012535-715.jpg",
-            "https://i.postimg.cc/Lhz9qQ5G/IMG-20260527-012535-743.jpg",
-            "https://i.postimg.cc/svsV5PGn/IMG-20260527-012535-924.jpg",
-            "https://i.postimg.cc/tYpXFdnm/IMG-20260527-012536-105.jpg",
-            "https://i.postimg.cc/TpfRnj5B/IMG-20260527-012536-227.jpg",
-            "https://i.postimg.cc/WhT20mJs/IMG-20260527-012610-318.jpg",
-            "https://i.postimg.cc/KRfmfKn8/IMG-20260527-012610-372.jpg",
-            "https://i.postimg.cc/Tp0T0yrK/IMG-20260527-012610-383.jpg",
-            "https://i.postimg.cc/QHmjmBp7/IMG-20260527-012610-397.jpg",
-            "https://i.postimg.cc/Tp0T0yrr/IMG-20260527-012610-517.jpg",
-            "https://i.postimg.cc/FYKNB9Zc/IMG-20260527-012610-758.jpg",
-            "https://i.postimg.cc/DSznM2gx/IMG-20260527-012610-881.jpg",
-            "https://i.postimg.cc/yDNsbVjq/IMG-20260527-012610-942.jpg",
-            "https://i.postimg.cc/v4SbRpqp/IMG-20260527-012611-019.jpg",
-            "https://i.postimg.cc/mP6Bx0pW/IMG-20260527-012611-067.jpg"
-        ];
-
-        // دالة التحميل الفوري الذكية بإجبار المتصفح على التحميل
-        async function forceDownload(imageUrl, fileName, buttonElement) {
-            if (buttonElement.classList.contains('loading')) return;
-            
-            const originalText = buttonElement.innerHTML;
-            buttonElement.classList.add('loading');
-            buttonElement.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>جاري التحميل...</span>`;
-            
-            try {
-                const response = await fetch(imageUrl);
-                const blob = await response.blob();
-                const blobUrl = window.URL.createObjectURL(blob);
-                
-                const link = document.createElement('a');
-                link.href = blobUrl;
-                link.download = fileName;
-                document.body.appendChild(link);
-                link.click();
-                
-                document.body.removeChild(link);
-                window.URL.revokeObjectURL(blobUrl);
-            } catch (error) {
-                // حل بديل في حال وجود قيود CORS من السيرفر المضيف
-                window.open(imageUrl, '_blank');
-            } finally {
-                buttonElement.classList.remove('loading');
-                buttonElement.innerHTML = originalText;
-            }
-        }
-
-        const galleryGrid = document.getElementById('galleryGrid');
-        let currentActiveImgSrc = "";
-        let currentActiveImgName = "";
-
-        // بناء كروت الشبكة
-        imagesList.forEach((url, index) => {
-            const photoIndex = index + 1;
-            const card = document.createElement('div');
-            card.className = 'photo-card';
-            
-            card.innerHTML = `
-                <div class="image-wrapper" onclick="openLightbox('${url}', 'Photo_${photoIndex}')">
-                    <img src="${url}" alt="لقطة ${photoIndex}" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <span class="card-title">لقطة رقم ${photoIndex}</span>
-                    <div class="download-btn" onclick="forceDownload('${url}', 'Exam_LastDay_2026_${photoIndex}.jpg', this)">
-                        <i class="fa-solid fa-circle-arrow-down"></i>
-                        <span>تحميل الصورة</span>
-                    </div>
-                </div>
-            `;
-            galleryGrid.appendChild(card);
-        });
-
-        // تحكم الـ Lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const lightboxDownloadBtn = document.getElementById('lightboxDownloadBtn');
-
-        function openLightbox(src, name) {
-            currentActiveImgSrc = src;
-            currentActiveImgName = `AbMaki_Exam2026_${name}.jpg`;
-            lightboxImg.src = src;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto'; 
-        }
-
-        lightboxDownloadBtn.addEventListener('click', function() {
-            forceDownload(currentActiveImgSrc, currentActiveImgName, this);
-        });
-
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', function(e) {
-            if(e.target === lightbox) closeLightbox();
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if(e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
-        });
-    </script>
 </body>
 </html>
