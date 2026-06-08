@@ -4,145 +4,380 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>معرض صور Ab Maki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* الأساسيات وإعادة التعيين */
+        /* الأساسيات وإعادة التعيين لـ تصميم عصري سينمائي فخم */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            /* تعديل الألوان لتناسب عمق الفخامة واللوجو الذهبي والأسود */
+            --primary: linear-gradient(135deg, #090d16, #111827, #1e293b);
+            --accent: #eab308; /* لمسة ذهبية تليق بـ Ab Maki */
+            --accent-hover: #ca8a04;
+            --bg-main: #0b0f19; /* خلفية داكنة مريحة للعين وتبرز الصور */
+            --card-bg: #151f32;
+            --text-color: #f1f5f9;
+            --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            --card-shadow-hover: 0 25px 50px rgba(234, 179, 8, 0.15);
         }
 
         body {
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding-bottom: 60px;
+            background-color: var(--bg-main);
+            color: var(--text-color);
+            padding-bottom: 40px;
+            overflow-x: hidden;
         }
 
-        /* هيدر احترافي */
+        /* هيدر سينمائي فخم وجبار */
         header {
-            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            background: var(--primary);
             color: white;
             text-align: center;
-            padding: 50px 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 60px 20px 40px 20px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            border-bottom: 1px solid rgba(234, 179, 8, 0.15);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(234, 179, 8, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* تنسيق اللوجو الجبار */
+        .logo-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            background: #000;
+            padding: 5px;
+            box-shadow: 0 0 25px rgba(234, 179, 8, 0.4), inset 0 0 15px rgba(234, 179, 8, 0.2);
+            border: 2px solid var(--accent);
+            animation: fadeInDown 0.8s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.5s ease;
+        }
+
+        .logo-container:hover img {
+            transform: scale(1.08) rotate(5deg);
         }
 
         header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 12px;
+            font-size: 3rem;
+            margin-bottom: 15px;
             font-weight: 800;
-            letter-spacing: 1px;
+            background: linear-gradient(to left, #ffffff, #fef08a, #eab308);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInDown 1s ease-out 0.2s both;
         }
 
         header p {
             font-size: 1.2rem;
             opacity: 0.85;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #94a3b8;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
-        /* شبكة عرض الصور المستجيبة (Grid) */
+        /* إخفاء شريط الأدوات (البحث والإحصائيات) بناءً على طلبك */
+        .toolbar {
+            display: none !important;
+        }
+
+        /* شبكة عرض الصور المستجيبة (Grid) محاذية من الأعلى */
         .gallery-container {
-            max-width: 1400px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 1440px;
+            margin: 50px auto 0 auto;
+            padding: 0 25px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 35px;
         }
 
-        /* كارت الصورة */
+        /* كارت الصورة الخرافي */
         .photo-card {
-            background: white;
-            border-radius: 16px;
+            background: var(--card-bg);
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
         }
 
         .photo-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-12px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: rgba(234, 179, 8, 0.3);
         }
 
-        /* إطار الصور الطولية (Vertical) */
+        /* إطار الصور الاحترافي */
         .image-wrapper {
             width: 100%;
-            height: 420px;
+            height: 440px;
             overflow: hidden;
-            background-color: #cbd5e1;
+            background-color: #1e293b;
             position: relative;
+            cursor: zoom-in;
         }
 
         .image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* تأثير الطبقة الشفافة عند التمرير بالماوس باستخدام الأيقونات */
+        .image-wrapper::after {
+            content: '\f065  عرض مكبر';
+            font-family: 'Font Awesome 6 Free', 'Cairo';
+            font-weight: 900;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(11, 15, 25, 0.65);
+            backdrop-filter: blur(4px);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo-card:hover .image-wrapper::after {
+            opacity: 1;
         }
 
         .photo-card:hover .image-wrapper img {
-            transform: scale(1.04);
+            transform: scale(1.06);
         }
 
-        /* منطقة زر التحميل */
+        /* منطقة زر التحميل المتطورة */
         .card-body {
             padding: 20px;
             text-align: center;
-            background: #ffffff;
-            border-top: 1px solid #f1f5f9;
+            background: var(--card-bg);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 2;
         }
 
         .download-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 12px;
             width: 100%;
-            background-color: #2563eb;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
             color: white;
             text-decoration: none;
-            padding: 12px 0;
-            border-radius: 10px;
+            padding: 14px 0;
+            border-radius: 14px;
             font-weight: 600;
             font-size: 1rem;
-            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(234, 179, 8, 0.4);
         }
 
         .download-btn:hover {
-            background-color: #1d4ed8;
+            background: linear-gradient(135deg, var(--accent), #ca8a04);
+            color: #000;
+            box-shadow: 0 6px 20px rgba(234, 179, 8, 0.3);
+            border-color: transparent;
         }
 
         .download-btn:active {
-            transform: scale(0.98);
+            transform: scale(0.97);
         }
 
-        /* الفوتر */
+        .download-btn i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .download-btn:hover i {
+            transform: translateY(2px);
+        }
+
+        /* نافذة الـ Lightbox المكبرة للصور (تأثير جبار سينمائي) */
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(5, 7, 12, 0.98);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 75vh;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            object-fit: contain;
+            border: 1px solid rgba(234, 179, 8, 0.2);
+        }
+
+        .lightbox.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px; right: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .lightbox-close:hover {
+            background: var(--accent);
+            color: #000;
+            transform: rotate(90deg);
+        }
+
+        .lightbox-download {
+            margin-top: 25px;
+            min-width: 280px;
+        }
+
+        /* رسالة البحث الفارغ */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            color: #64748b;
+            font-size: 1.2rem;
+            display: none;
+        }
+
+        /* الفوتر الاحترافي */
         footer {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 80px;
+            padding: 30px 20px;
             color: #64748b;
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 500;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: #090d16;
+        }
+        
+        footer p span {
+            color: var(--accent);
+        }
+
+        /* حركات الأنيميشن الأساسية */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* استعلامات الشاشات الصغيرة (Responsive) */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            header p { font-size: 1.05rem; }
+            .gallery-container { gap: 25px; padding: 0 15px; }
+            .image-wrapper { height: 380px; }
+            .logo-container { width: 110px; height: 110px; }
         }
     </style>
 </head>
 <body>
 
     <header>
+        <div class="logo-container">
+            <img src="Picsart_26-06-06_15-33-16-196[1].png" alt="Logo Ab Maki Group">
+        </div>
         <h1>معرض الصور الرقمي</h1>
         <p>استعرض وحمّل صور الدفعة بجودتها الكاملة — عدسة Ab Maki Group</p>
     </header>
 
-    <main class="gallery-container" id="gallery"></main>
+    <div class="toolbar">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن صورة محددة...">
+        </div>
+        <div class="counter-badge" id="imageCounter">إجمالي الصور: 73 صورة</div>
+    </div>
+
+    <main class="gallery-container" id="gallery">
+        <div class="no-results" id="noResults">عذراً، لم نجد أي صورة تطابق بحثك! 🔍</div>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+        <img src="" alt="صورة مكبرة" class="lightbox-content" id="lightboxImg">
+        <a href="" download="" class="download-btn lightbox-download" id="lightboxDownloadBtn">
+            <i class="fa-solid fa-cloud-arrow-down"></i>
+            <span>تحميل بجودتها الأصلية</span>
+        </a>
+    </div>
 
     <footer>
-        <p>جميع الحقوق محفوظة © Ab Maki Group 2026</p>
+        <p>جميع الحقوق محفوظة © <span>Ab Maki Group</span> 2026</p>
     </footer>
 
     <script>
-        // Matrix الكاملة لـ 73 صورة فريدة مرتبة ومحدثة بالكامل
+        // المصفوفة الكاملة لـ 73 صورة فريدة مرتبة ومحدثة بالكامل وبدون نقص حرف واحد كما هي
         const images = [
             "IMG_20260527_012347_695.jpg",
             "IMG_20260527_012347_708.jpg",
@@ -219,26 +454,99 @@
 
         const folderPath = "images/"; 
         const gallery = document.getElementById('gallery');
+        const searchInput = document.getElementById('searchInput');
+        const imageCounter = document.getElementById('imageCounter');
+        const noResults = document.getElementById('noResults');
 
-        // بناء المعرض مع تفعيل الـ Lazy Loading لتسريع تحميل الصفحة وسط الكم الكبير من الصور
-        images.forEach((fileName, index) => {
-            const fullPath = folderPath + fileName;
+        // عناصر الـ Lightbox المكبرة
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxDownloadBtn = document.getElementById('lightboxDownloadBtn');
+
+        // دالة مخصصة لإنشاء المعرض وعرض الـ Cards ديناميكياً مع دمج أيقونات Font Awesome
+        function buildGallery() {
+            images.forEach((fileName, index) => {
+                const fullPath = folderPath + fileName;
+                
+                const card = document.createElement('div');
+                card.className = 'photo-card';
+                card.setAttribute('data-name', fileName.toLowerCase());
+                
+                card.innerHTML = `
+                    <div class="image-wrapper" onclick="openLightbox('${fullPath}', '${fileName}')">
+                        <img src="${fullPath}" alt="صورة رقم ${index + 1}" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <a href="${fullPath}" download="AbMaki_${fileName}" class="download-btn">
+                            <i class="fa-solid fa-circle-arrow-down"></i>
+                            <span>تحميل بجودة عالية</span>
+                        </a>
+                    </div>
+                `;
+                
+                gallery.appendChild(card);
+            });
+        }
+
+        // تشغيل بناء المعرض فوراً
+        buildGallery();
+
+        // نظام الفلترة والبحث الفوري الفعّال (Real-time Filter) - محتفظ به تماماً لمنع الأخطاء البرمجية
+        searchInput.addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase().trim();
+            const cards = gallery.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name');
+                if(name.includes(term)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // تحديث عدد الصور المعروضة بناءً على نتيجة البحث
+            imageCounter.textContent = `الصور المعروضة: ${visibleCount} صورة`;
             
-            const card = document.createElement('div');
-            card.className = 'photo-card';
-            
-            card.innerHTML = `
-                <div class="image-wrapper">
-                    <img src="${fullPath}" alt="صورة رقم ${index + 1}" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <a href="${fullPath}" download="AbMaki_${fileName}" class="download-btn">
-                        <span>تحميل الصورة بجودة عالية</span>
-                    </a>
-                </div>
-            `;
-            
-            gallery.appendChild(card);
+            // إظهار رسالة البحث الفارغ إذا لم يطابق البحث أي صورة
+            if(visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        });
+
+        // دوال التحكم في نافذة عرض الصور الكبيرة (Lightbox)
+        function openLightbox(src, fileName) {
+            lightboxImg.src = src;
+            lightboxDownloadBtn.href = src;
+            lightboxDownloadBtn.download = `AbMaki_${fileName}`;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // منع السكرول في الخلفية أثناء التكبير
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // إعادة تفعيل السكرول
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        
+        // إغلاق النافذة عند الضغط في أي مكان فارغ بالخلفية
+        lightbox.addEventListener('click', function(e) {
+            if(e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // إغلاق النافذة عند الضغط على زر Escape في الكيبورد
+        document.addEventListener('keydown', function(e) {
+            if(e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
         });
     </script>
 </body>
