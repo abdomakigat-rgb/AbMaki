@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض صور Ab Maki</title>
+    <style>
+        /* الأساسيات وإعادة التعيين */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding-bottom: 60px;
+        }
+
+        /* هيدر احترافي */
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.85;
+        }
+
+        /* شبكة عرض الصور المستجيبة (Grid) */
+        .gallery-container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* كارت الصورة */
+        .photo-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* إطار الصور الطولية (Vertical) */
+        .image-wrapper {
+            width: 100%;
+            height: 420px;
+            overflow: hidden;
+            background-color: #cbd5e1;
+            position: relative;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .photo-card:hover .image-wrapper img {
+            transform: scale(1.04);
+        }
+
+        /* منطقة زر التحميل */
+        .card-body {
+            padding: 20px;
+            text-align: center;
+            background: #ffffff;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 0;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .download-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* الفوتر */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #64748b;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>معرض الصور الرقمي</h1>
+        <p>استعرض وحمّل صور الدفعة بجودتها الكاملة — عدسة Ab Maki Group</p>
+    </header>
+
+    <main class="gallery-container" id="gallery"></main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © Ab Maki Group 2026</p>
+    </footer>
+
+    <script>
+        // المصفوفة الكاملة لـ 73 صورة فريدة مرتبة ومحدثة بالكامل
+        const images = [
+            "IMG_20260527_012347_695.jpg",
+            "IMG_20260527_012347_708.jpg",
+            "IMG_20260527_012347_950.jpg",
+            "IMG_20260527_012348_088.jpg",
+            "IMG_20260527_012348_134.jpg",
+            "IMG_20260527_012348_156.jpg",
+            "IMG_20260527_012348_305.jpg",
+            "IMG_20260527_012348_574.jpg",
+            "IMG_20260527_012355_928.jpg",
+            "IMG_20260527_012355_996.jpg",
+            "IMG_20260527_012356_000.jpg",
+            "IMG_20260527_012356_224.jpg",
+            "IMG_20260527_012356_274.jpg",
+            "IMG_20260527_012356_629.jpg",
+            "IMG_20260527_012356_708.jpg",
+            "IMG_20260527_012356_862.jpg",
+            "IMG_20260527_012402_677.jpg",
+            "IMG_20260527_012402_706.jpg",
+            "IMG_20260527_012402_858.jpg",
+            "IMG_20260527_012402_884.jpg",
+            "IMG_20260527_012403_462.jpg",
+            "IMG_20260527_012410_177.jpg",
+            "IMG_20260527_012429_977.jpg",
+            "IMG_20260527_012430_494.jpg",
+            "IMG_20260527_012430_511.jpg",
+            "IMG_20260527_012438_355 (1).jpg",
+            "IMG_20260527_012438_355.jpg",
+            "IMG_20260527_012438_363.jpg",
+            "IMG_20260527_012438_375.jpg",
+            "IMG_20260527_012438_523.jpg",
+            "IMG_20260527_012438_897.jpg",
+            "IMG_20260527_012507_600.jpg",
+            "IMG_20260527_012508_180.jpg",
+            "IMG_20260527_012516_023.jpg",
+            "IMG_20260527_012516_121.jpg",
+            "IMG_20260527_012516_491.jpg",
+            "IMG_20260527_012516_501.jpg",
+            "IMG_20260527_012516_591.jpg",
+            "IMG_20260527_012516_638.jpg",
+            "IMG_20260527_012516_872.jpg",
+            "IMG_20260527_012522_393.jpg",
+            "IMG_20260527_012522_396.jpg",
+            "IMG_20260527_012522_595.jpg",
+            "IMG_20260527_012522_616.jpg",
+            "IMG_20260527_012522_706.jpg",
+            "IMG_20260527_012522_724 (1).jpg",
+            "IMG_20260527_012522_724.jpg",
+            "IMG_20260527_012529_252.jpg",
+            "IMG_20260527_012529_483.jpg",
+            "IMG_20260527_012529_608.jpg",
+            "IMG_20260527_012529_854.jpg",
+            "IMG_20260527_012529_864.jpg",
+            "IMG_20260527_012529_866.jpg",
+            "IMG_20260527_012529_947 (1).jpg",
+            "IMG_20260527_012529_947.jpg",
+            "IMG_20260527_012529_988.jpg",
+            "IMG_20260527_012535_715.jpg",
+            "IMG_20260527_012535_743.jpg",
+            "IMG_20260527_012535_924.jpg",
+            "IMG_20260527_012536_105.jpg",
+            "IMG_20260527_012536_227.jpg",
+            "IMG_20260527_012610_318.jpg",
+            "IMG_20260527_012610_372.jpg",
+            "IMG_20260527_012610_383.jpg",
+            "IMG_20260527_012610_397.jpg",
+            "IMG_20260527_012610_517.jpg",
+            "IMG_20260527_012610_758.jpg",
+            "IMG_20260527_012610_881.jpg",
+            "IMG_20260527_012610_942.jpg",
+            "IMG_20260527_012611_019.jpg",
+            "IMG_20260527_012611_067.jpg"
+        ];
+
+        const folderPath = "images/"; 
+        const gallery = document.getElementById('gallery');
+
+        // بناء المعرض مع تفعيل الـ Lazy Loading لتسريع تحميل الصفحة وسط الكم الكبير من الصور
+        images.forEach((fileName, index) => {
+            const fullPath = folderPath + fileName;
+            
+            const card = document.createElement('div');
+            card.className = 'photo-card';
+            
+            card.innerHTML = `
+                <div class="image-wrapper">
+                    <img src="${fullPath}" alt="صورة رقم ${index + 1}" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <a href="${fullPath}" download="AbMaki_${fileName}" class="download-btn">
+                        <span>تحميل الصورة بجودة عالية</span>
+                    </a>
+                </div>
+            `;
+            
+            gallery.appendChild(card);
+        });
+    </script>
+</body>
+</html>
