@@ -3,60 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض صور Ab Maki</title>
+    <title>معرض صور Ab Maki Group</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* الأساسيات وإعادة التعيين لـ تصميم عصري سينمائي فخم */
+        /* إعادة تعيين الأساسيات لتصميم غامر */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Cairo', sans-serif;
         }
 
         :root {
-            /* تعديل الألوان لتناسب عمق الفخامة واللوجو الذهبي والأسود */
-            --primary: #ffffff; /* تم تعديل الهيدر للون الأبيض */
-            --accent: #eab308; /* لمسة ذهبية تليق بـ Ab Maki */
-            --accent-hover: #ca8a04;
-            --bg-main: #0b0f19; /* خلفية داكنة مريحة للعين وتبرز الصور */
-            --card-bg: #151f32;
-            --text-color: #f1f5f9;
+            --bg-main: #0b0f19;      /* خلفية داكنة فخمة وسينمائية */
+            --card-bg: #151f32;      /* خلفية الكروت */
+            --accent: #eab308;       /* اللمسة الذهبية الخاصة بـ Ab Maki */
+            --text-light: #f1f5f9;   /* لون النصوص الفاتحة */
             --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             --card-shadow-hover: 0 25px 50px rgba(234, 179, 8, 0.15);
         }
 
         body {
             background-color: var(--bg-main);
-            color: var(--text-color);
+            color: var(--text-light);
             padding-bottom: 40px;
             overflow-x: hidden;
         }
 
-        /* هيدر سينمائي فخم وجبار باللون الأبيض */
+        /* هيدر احترافي باللون الأبيض ليعطي تباين قوي (Contrast) */
         header {
-            background: var(--primary);
-            color: #0b0f19; /* تغيير لون النص الأساسي ليتناسب مع الخلفية البيضاء */
+            background: #ffffff;
+            color: #0b0f19;
             text-align: center;
             padding: 60px 20px 40px 20px;
             position: relative;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            background: radial-gradient(circle at 50% 30%, rgba(234, 179, 8, 0.05) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        /* تنسيق اللوجو الجبار من أعلى */
+        /* تنسيق اللوجو الدائري الاحترافي */
         .logo-container {
             width: 140px;
             height: 140px;
@@ -66,7 +54,6 @@
             padding: 5px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 0 15px rgba(234, 179, 8, 0.2);
             border: 2px solid var(--accent);
-            animation: fadeInDown 0.8s ease-out;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -86,41 +73,33 @@
         }
 
         header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-size: 2.8rem;
+            margin-bottom: 12px;
             font-weight: 800;
             background: linear-gradient(to left, #0b0f19, #475569, #ca8a04);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: fadeInDown 1s ease-out 0.2s both;
         }
 
         header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.15rem;
             font-weight: 600;
             max-width: 600px;
             margin: 0 auto;
-            color: #475569; /* لون داكن واضح ومريح على الخلفية البيضاء */
-            animation: fadeInUp 0.8s ease-out 0.4s both;
+            color: #475569;
         }
 
-        /* إخفاء شريط الأدوات (البحث والإحصائيات) بناءً على طلبك */
-        .toolbar {
-            display: none !important;
-        }
-
-        /* شبكة عرض الصور المستجيبة (Grid) محاذية من الأعلى */
+        /* شبكة عرض الصور (Grid) الاحترافية */
         .gallery-container {
             max-width: 1440px;
             margin: 50px auto 0 auto;
             padding: 0 25px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 35px;
         }
 
-        /* كارت الصورة الخرافي بدون إطار */
+        /* كارت الصورة - تم إزالة جميع الإطارات والحدود تماماً */
         .photo-card {
             background: var(--card-bg);
             border-radius: 24px;
@@ -129,7 +108,7 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
-            border: none; /* إزالة الإطار تماماً */
+            border: none; /* بدون إطار */
             position: relative;
         }
 
@@ -138,12 +117,12 @@
             box-shadow: var(--card-shadow-hover);
         }
 
-        /* إطار الصور الاحترافي */
+        /* حاوية الصورة داخل الكارت */
         .image-wrapper {
             width: 100%;
-            height: 440px;
+            height: 400px;
             overflow: hidden;
-            background-color: #1e293b;
+            background-color: #121926;
             position: relative;
             cursor: zoom-in;
         }
@@ -155,14 +134,14 @@
             transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* تأثير الطبقة الشفافة عند التمرير بالماوس باستخدام الأيقونات */
+        /* تأثير الطبقة الشفافة عند التمرير (Hover Effect) */
         .image-wrapper::after {
             content: '\f065  عرض مكبر';
             font-family: 'Font Awesome 6 Free', 'Cairo';
             font-weight: 900;
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 15, 25, 0.65);
+            background: rgba(11, 15, 25, 0.7);
             backdrop-filter: blur(4px);
             color: var(--accent);
             display: flex;
@@ -181,15 +160,23 @@
             transform: scale(1.06);
         }
 
-        /* منطقة زر التحميل المتطورة */
+        /* منطقة التحكم وزر التحميل */
         .card-body {
             padding: 20px;
             text-align: center;
             background: var(--card-bg);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
             z-index: 2;
         }
 
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #94a3b8;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* تصميم زرار التحميل جبار وفخم */
         .download-btn {
             display: flex;
             align-items: center;
@@ -205,13 +192,13 @@
             font-size: 1rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid rgba(234, 179, 8, 0.4);
+            border: 1px solid rgba(234, 179, 8, 0.3);
         }
 
         .download-btn:hover {
             background: linear-gradient(135deg, var(--accent), #ca8a04);
             color: #000;
-            box-shadow: 0 6px 20px rgba(234, 179, 8, 0.3);
+            box-shadow: 0 6px 20px rgba(234, 179, 8, 0.4);
             border-color: transparent;
         }
 
@@ -228,7 +215,7 @@
             transform: translateY(2px);
         }
 
-        /* نافذة الـ Lightbox المكبرة للصور بدون إطار */
+        /* نافذة الـ Lightbox المكبرة للصور (بدون إطار) */
         .lightbox {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -259,7 +246,7 @@
             transform: scale(0.9);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             object-fit: contain;
-            border: none; /* إزالة الإطار من النافذة المكبرة أيضاً */
+            border: none; /* تم إزالة الإطار تماماً هنا أيضاً */
         }
 
         .lightbox.active .lightbox-content {
@@ -294,17 +281,7 @@
             min-width: 280px;
         }
 
-        /* رسالة البحث الفارغ */
-        .no-results {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 60px 20px;
-            color: #64748b;
-            font-size: 1.2rem;
-            display: none;
-        }
-
-        /* الفوتر الاحترافي */
+        /* الفوتر السفلي */
         footer {
             text-align: center;
             margin-top: 80px;
@@ -315,28 +292,17 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             background: #090d16;
         }
-        
+
         footer p span {
             color: var(--accent);
         }
 
-        /* حركات الأنيميشن الأساسية */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* استعلامات الشاشات الصغيرة (Responsive) */
+        /* التجاوب مع الشاشات الصغيرة */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
-            header p { font-size: 1.05rem; }
+            header h1 { font-size: 2.1rem; }
+            header p { font-size: 1rem; }
             .gallery-container { gap: 25px; padding: 0 15px; }
-            .image-wrapper { height: 380px; }
+            .image-wrapper { height: 350px; }
             .logo-container { width: 110px; height: 110px; }
         }
     </style>
@@ -347,19 +313,90 @@
         <div class="logo-container">
             <img src="Picsart_26-06-06_15-33-16-196[1].png" alt="Logo Ab Maki Group">
         </div>
-        <h1>معرض الصور الرقمي</h1>
-        <p>استعرض وحمّل صور الدفعة بجودتها الكاملة — عدسة Ab Maki Group</p>
+        <h1>معرض الصور الجديد</h1>
+        <p>استعرض وحمّل الاسكتشات بجودتها الأصلية — عدسة Ab Maki Group</p>
     </header>
 
-    <div class="toolbar">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="ابحث عن صورة محددة...">
+    <main class="gallery-container">
+        
+        <div class="photo-card">
+            <div class="image-wrapper" onclick="openLightbox('https://i.ibb.co/N6mdFcyL/IMG-20260527-012348-088.jpg', 'Image_1')">
+                <img src="https://i.ibb.co/N6mdFcyL/IMG-20260527-012348-088.jpg" alt="الصورة الأولى" loading="lazy">
+            </div>
+            <div class="card-body">
+                <span class="card-title">اسكتش التصميم رقم 1</span>
+                <a href="https://i.ibb.co/N6mdFcyL/IMG-20260527-012348-088.jpg" download="AbMaki_Image_1.jpg" target="_blank" class="download-btn">
+                    <i class="fa-solid fa-circle-arrow-down"></i>
+                    <span>تحميل الصورة</span>
+                </a>
+            </div>
         </div>
-        <div class="counter-badge" id="imageCounter">إجمالي الصور: 73 صورة</div>
-    </div>
 
-    <main class="gallery-container" id="gallery">
-        <div class="no-results" id="noResults">عذراً، لم نجد أي صورة تطابق بحثك! 🔍</div>
+        <div class="photo-card">
+            <div class="image-wrapper" onclick="openLightbox('https://i.ibb.co/pBZ6ZJzV/IMG-20260527-012348-134.jpg', 'Image_2')">
+                <img src="https://i.ibb.co/pBZ6ZJzV/IMG-20260527-012348-134.jpg" alt="الصورة الثانية" loading="lazy">
+            </div>
+            <div class="card-body">
+                <span class="card-title">اسكتش التصميم رقم 2</span>
+                <a href="https://i.ibb.co/pBZ6ZJzV/IMG-20260527-012348-134.jpg" download="AbMaki_Image_2.jpg" target="_blank" class="download-btn">
+                    <i class="fa-solid fa-circle-arrow-down"></i>
+                    <span>تحميل الصورة</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <div class="image-wrapper" onclick="openLightbox('https://i.ibb.co/NnxzRfwq/IMG-20260527-012347-950.jpg', 'Image_3')">
+                <img src="https://i.ibb.co/NnxzRfwq/IMG-20260527-012347-950.jpg" alt="الصورة الثالثة" loading="lazy">
+            </div>
+            <div class="card-body">
+                <span class="card-title">اسكتش التصميم رقم 3</span>
+                <a href="https://i.ibb.co/NnxzRfwq/IMG-20260527-012347-950.jpg" download="AbMaki_Image_3.jpg" target="_blank" class="download-btn">
+                    <i class="fa-solid fa-circle-arrow-down"></i>
+                    <span>تحميل الصورة</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <div class="image-wrapper" onclick="openLightbox('https://i.ibb.co/tT6q4FZv/IMG-20260527-012347-708.jpg', 'Image_4')">
+                <img src="https://i.ibb.co/tT6q4FZv/IMG-20260527-012347-708.jpg" alt="الصورة الرابعة" loading="lazy">
+            </div>
+            <div class="card-body">
+                <span class="card-title">اسكتش التصميم رقم 4</span>
+                <a href="https://i.ibb.co/tT6q4FZv/IMG-20260527-012347-708.jpg" download="AbMaki_Image_4.jpg" target="_blank" class="download-btn">
+                    <i class="fa-solid fa-circle-arrow-down"></i>
+                    <span>تحميل الصورة</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <div class="image-wrapper" onclick="openLightbox('https://i.ibb.co/QjThLDnX/IMG-20260527-012347-695.jpg', 'Image_5')">
+                <img src="https://i.ibb.co/QjThLDnX/IMG-20260527-012347-695.jpg" alt="الصورة الخامسة" loading="lazy">
+            </div>
+            <div class="card-body">
+                <span class="card-title">اسكتش التصميم رقم 5</span>
+                <a href="https://i.ibb.co/QjThLDnX/IMG-20260527-012347-695.jpg" download="AbMaki_Image_5.jpg" target="_blank" class="download-btn">
+                    <i class="fa-solid fa-circle-arrow-down"></i>
+                    <span>تحميل الصورة</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <div class="image-wrapper" onclick="openLightbox('https://i.ibb.co/HDkDSJP3/IMG-20260527-012348-574.jpg', 'Image_6')">
+                <img src="https://i.ibb.co/HDkDSJP3/IMG-20260527-012348-574.jpg" alt="الصورة السادسة" loading="lazy">
+            </div>
+            <div class="card-body">
+                <span class="card-title">اسكتش التصميم رقم 6</span>
+                <a href="https://i.ibb.co/HDkDSJP3/IMG-20260527-012348-574.jpg" download="AbMaki_Image_6.jpg" target="_blank" class="download-btn">
+                    <i class="fa-solid fa-circle-arrow-down"></i>
+                    <span>تحميل الصورة</span>
+                </a>
+            </div>
+        </div>
+
     </main>
 
     <div class="lightbox" id="lightbox">
@@ -367,7 +404,7 @@
         <img src="" alt="صورة مكبرة" class="lightbox-content" id="lightboxImg">
         <a href="" download="" class="download-btn lightbox-download" id="lightboxDownloadBtn">
             <i class="fa-solid fa-cloud-arrow-down"></i>
-            <span>تحميل بجودتها الأصلية</span>
+            <span>تحميل بالجودة الأصلية</span>
         </a>
     </div>
 
@@ -376,172 +413,32 @@
     </footer>
 
     <script>
-        // المصفوفة الكاملة الدقيقة والمطابقة تماماً لملفاتك المرفوعة
-        const images = [
-            "IMG_20260527_012347_695.jpg",
-            "IMG_20260527_012347_708.jpg",
-            "IMG_20260527_012347_950.jpg",
-            "IMG_20260527_012348_088.jpg",
-            "IMG_20260527_012348_134.jpg",
-            "IMG_20260527_012348_156.jpg",
-            "IMG_20260527_012348_305.jpg",
-            "IMG_20260527_012348_574.jpg",
-            "IMG_20260527_012355_928.jpg",
-            "IMG_20260527_012355_996.jpg",
-            "IMG_20260527_012356_000.jpg",
-            "IMG_20260527_012356_224.jpg",
-            "IMG_20260527_012356_274.jpg",
-            "IMG_20260527_012356_629.jpg",
-            "IMG_20260527_012356_708.jpg",
-            "IMG_20260527_012356_862.jpg",
-            "IMG_20260527_012402_677.jpg",
-            "IMG_20260527_012402_706.jpg",
-            "IMG_20260527_012402_858.jpg",
-            "IMG_20260527_012402_884.jpg",
-            "IMG_20260527_012403_462.jpg",
-            "IMG_20260527_012410_177.jpg",
-            "IMG_20260527_012429_977.jpg",
-            "IMG_20260527_012430_494.jpg",
-            "IMG_20260527_012430_511.jpg",
-            "IMG_20260527_012438_355 (1).jpg",
-            "IMG_20260527_012438_355.jpg",
-            "IMG_20260527_012438_363.jpg",
-            "IMG_20260527_012438_375.jpg",
-            "IMG_20260527_012438_523.jpg",
-            "IMG_20260527_012438_897.jpg",
-            "IMG_20260527_012507_600.jpg",
-            "IMG_20260527_012508_180.jpg",
-            "IMG_20260527_012516_023.jpg",
-            "IMG_20260527_012516_121.jpg",
-            "IMG_20260527_012516_491.jpg",
-            "IMG_20260527_012516_501.jpg",
-            "IMG_20260527_012516_591.jpg",
-            "IMG_20260527_012516_638.jpg",
-            "IMG_20260527_012516_872.jpg",
-            "IMG_20260527_012522_393.jpg",
-            "IMG_20260527_012522_396.jpg",
-            "IMG_20260527_012522_595.jpg",
-            "IMG_20260527_012522_616.jpg",
-            "IMG_20260527_012522_706.jpg",
-            "IMG_20260527_012522_724 (1).jpg",
-            "IMG_20260527_012522_724.jpg",
-            "IMG_20260527_012529_252.jpg",
-            "IMG_20260527_012529_483.jpg",
-            "IMG_20260527_012529_608.jpg",
-            "IMG_20260527_012529_854.jpg",
-            "IMG_20260527_012529_864.jpg",
-            "IMG_20260527_012529_866.jpg",
-            "IMG_20260527_012529_947 (1).jpg",
-            "IMG_20260527_012529_947.jpg",
-            "IMG_20260527_012529_988.jpg",
-            "IMG_20260527_012535_715.jpg",
-            "IMG_20260527_012535_743.jpg",
-            "IMG_20260527_012535_924.jpg",
-            "IMG_20260527_012536_105.jpg",
-            "IMG_20260527_012536_227.jpg",
-            "IMG_20260527_012610_318.jpg",
-            "IMG_20260527_012610_372.jpg",
-            "IMG_20260527_012610_383.jpg",
-            "IMG_20260527_012610_397.jpg",
-            "IMG_20260527_012610_517.jpg",
-            "IMG_20260527_012610_758.jpg",
-            "IMG_20260527_012610_881.jpg",
-            "IMG_20260527_012610_942.jpg",
-            "IMG_20260527_012611_019.jpg",
-            "IMG_20260527_012611_067.jpg"
-        ];
-
-        const folderPath = ""; 
-        const gallery = document.getElementById('gallery');
-        const searchInput = document.getElementById('searchInput');
-        const imageCounter = document.getElementById('imageCounter');
-        const noResults = document.getElementById('noResults');
-
-        // عناصر الـ Lightbox المكبرة
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxClose = document.getElementById('lightboxClose');
         const lightboxDownloadBtn = document.getElementById('lightboxDownloadBtn');
 
-        // دالة مخصصة لإنشاء المعرض وعرض الـ Cards ديناميكياً مع دمج أيقونات Font Awesome
-        function buildGallery() {
-            images.forEach((fileName, index) => {
-                const fullPath = folderPath + fileName;
-                
-                const card = document.createElement('div');
-                card.className = 'photo-card';
-                card.setAttribute('data-name', fileName.toLowerCase());
-                
-                card.innerHTML = `
-                    <div class="image-wrapper" onclick="openLightbox('${fullPath}', '${fileName}')">
-                        <img src="${fullPath}" alt="صورة رقم ${index + 1}" loading="lazy">
-                    </div>
-                    <div class="card-body">
-                        <a href="${fullPath}" download="AbMaki_${fileName}" class="download-btn">
-                            <i class="fa-solid fa-circle-arrow-down"></i>
-                            <span>تحميل بجودة عالية</span>
-                        </a>
-                    </div>
-                `;
-                
-                gallery.appendChild(card);
-            });
-        }
-
-        // تشغيل بناء المعرض فوراً
-        buildGallery();
-
-        // نظام الفلترة والبحث الفوري الفعّال
-        searchInput.addEventListener('input', function(e) {
-            const term = e.target.value.toLowerCase().trim();
-            const cards = gallery.querySelectorAll('.photo-card');
-            let visibleCount = 0;
-
-            cards.forEach(card => {
-                const name = card.getAttribute('data-name');
-                if(name.includes(term)) {
-                    card.style.display = 'flex';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            // تحديث عدد الصور المعروضة بناءً على نتيجة البحث
-            imageCounter.textContent = `الصور المعروضة: ${visibleCount} صورة`;
-            
-            // إظهار رسالة البحث الفارغ إذا لم يطابق البحث أي صورة
-            if(visibleCount === 0) {
-                noResults.style.display = 'block';
-            } else {
-                noResults.style.display = 'none';
-            }
-        });
-
-        // دوال التحكم في نافذة عرض الصور الكبيرة (Lightbox)
-        function openLightbox(src, fileName) {
+        function openLightbox(src, name) {
             lightboxImg.src = src;
             lightboxDownloadBtn.href = src;
-            lightboxDownloadBtn.download = `AbMaki_${fileName}`;
+            lightboxDownloadBtn.download = `AbMaki_${name}.jpg`;
             lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // منع السكرول في الخلفية أثناء التكبير
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeLightbox() {
             lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto'; // إعادة تفعيل السكرول
+            document.body.style.overflow = 'auto'; 
         }
 
         lightboxClose.addEventListener('click', closeLightbox);
         
-        // إغلاق النافذة عند الضغط في أي مكان فارغ بالخلفية
         lightbox.addEventListener('click', function(e) {
             if(e.target === lightbox) {
                 closeLightbox();
             }
         });
 
-        // إغلاق النافذة عند الضغط على زر Escape في الكيبورد
         document.addEventListener('keydown', function(e) {
             if(e.key === 'Escape' && lightbox.classList.contains('active')) {
                 closeLightbox();
